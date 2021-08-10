@@ -213,4 +213,6 @@ class Quize extends React.Component{
     }
 }
 
+
+
 export default Quize;
