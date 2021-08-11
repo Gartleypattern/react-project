@@ -102,40 +102,6 @@ class Question3 extends React.Component{
         );
     }
 }
-class Question4 extends React.Component{
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            status:false
-        }
-    }
-    
-    changeResult = () => {
-        if (this.state.status) {
-            return;
-        }
-        this.setState({
-            status:true
-        });
-        this.props.result();
-    }
-
-    render = () => {
-        return (
-            <div>
-                <p className='display-5'><strong>Question Three :</strong>35 + 12</p>
-                <div className='btn-group mt-3'>
-                    <button className='btn btn-primary'>38</button>
-                    <button className='btn btn-primary'>22</button>
-                    <button
-                        onClick={this.changeResult}
-                        className='btn btn-primary'>47</button>
-                </div>
-            </div>
-        );
-    }
-}
 
 class Quize extends React.Component{
     constructor(props){
