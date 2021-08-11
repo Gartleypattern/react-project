@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Question1 extends React.Component{
@@ -102,7 +101,7 @@ class Question3 extends React.Component{
             </div>
         );
     }
-}
+}   
 
 
 class Quize extends React.Component{
