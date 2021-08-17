@@ -1,5 +1,5 @@
 import React from 'react';
-import Quize from './components/Quize';
+import ToDoList from './components/ToDoList';
 import './App.css';
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Quize />
+        <ToDoList />
       </div>
     );
   };

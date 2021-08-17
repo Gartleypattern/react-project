@@ -2,31 +2,22 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-class Editor extends React.Component{
+class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             front: '',
-            back:''
+            back: ''
         }
-
-        this.handleChange = this.handleChange.bind(this);
-        this.addCard = this.addCard.bind(this);
-        this.deleteCard = this.deleteCard.bind(this);
     }
 
     handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+        this.setState(() => ({[event.target.name]: event.target.value}));
+    };
 
     addCard = () => {
         this.props.addCard(this.state.front, this.state.back);
-        this.setState({
-            front: '',
-            back:''
-        });
+        this.setState(() => ({front: '', back: ''}));
     }
 
     deleteCard = (event) => {
@@ -106,12 +97,11 @@ class Editor extends React.Component{
                 <div className='row mt-3'>
                     <div className='col-sm-5'></div>
                     <div className='col-sm-2'>
-                        {this.props.cards.length ?
+                        {this.props.cards.length>0 &&
                             <button
                                 className='btn btn-warning'
                                 onClick={this.props.swichMode}>Switch to viewer
                             </button>
-                            : ''
                         }
                     </div>
                     <div className='col-sm-5'></div>
@@ -135,9 +125,7 @@ class Viewer extends React.Component{
 
 
     flipCard = () => {
-        this.setState(state=>({
-            status:!state.status
-        }));
+        this.setState(state=>({status:!state.status}));
     }
 
     nextCard = () => {
@@ -199,22 +187,15 @@ class FlashCards extends React.Component{
             mode: true,
             cards: []
         }
-        this.swichMode = this.swichMode.bind(this);
-        this.addCard = this.addCard.bind(this);
-        this.deleteCard = this.deleteCard.bind(this);
     }
 
 
     swichMode = ()=> {
-        this.setState(state=>({
-            mode:!state.mode
-        }));
+        this.setState(state=>({mode:!state.mode}));
     }
     
     addCard = (front,back) => {
-        this.setState(state=>({
-            cards:[...state.cards,{front,back}]
-        }));
+        this.setState(state=>({cards:[...state.cards,{front,back}]}));
     }
 
     deleteCard = (index) => {

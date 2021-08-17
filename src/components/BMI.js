@@ -5,36 +5,59 @@ class ChangeToGram extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            weight:0
+            kilogram: 0,
+            gram:0
         }
-        this.toGram = this.toGram.bind(this);
     }
 
-
-    toGram(event) {
-        this.setState({
-            weight:(event.target.value)*1000
-        });
+    handleClick = () => {
+        this.setState(() => ({kilogram:''}));
     }
 
+    convertor = (event) => {
+        this.setState(() => ({
+                kilogram: event.target.value,
+                gram:event.target.value*1000
+        }));
+    }
 
     render() {
         return (
-
-            <div className='container'>
-                <div className='row mt-3 '>
-                    <div className='col-sm-4'></div>
-                    <div className='col-sm-4 shadow  bg-white rounded'>
-                        <input
-                            type='text'
-                            value={this.props.searchString}
-                            onChange={this.toGram}
-                            ref="searchStringInput"
-                        />
-                        <p>{this.state.weight} gram</p>
+            <div
+                className='bg-primary text-white rounded container text-center shadow mt-4'
+                style={{ width: '500px', height: '300px' }}
+            >
+                <h3 className='pt-4'>Kilogram to gram convertor</h3>
+                <div className='mx-5'>
+                    <div className='form-group row mt-5'>
+                            <label for="kilogram" class="col-sm-2 col-form-label">Kilogram</label>
+                            <div className='col-sm-10'>
+                                <input
+                                    className='form-control'
+                                    style={{ width: '250px' }}
+                                    onChange={this.convertor}
+                                    onClick={this.handleClick}
+                                    type="text"
+                                    name='kilogram'
+                                    id='kilogram'
+                                    value={this.state.kilogram}
+                                />
+                            </div>
+                        </div>
+                        <div className='form-group row mt-5'>
+                            <label for="kilogram" class="col-sm-2 col-form-label">gram</label>
+                            <div className='col-sm-10'>
+                                <input
+                                className='form-control'
+                                style={{ width: '250px' }}
+                                value={this.state.gram}
+                                type="text"
+                                name='gram'
+                                disabled
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className='col-sm-4'></div>
-                </div>
             </div>
         );
     }

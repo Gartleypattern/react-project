@@ -12,18 +12,10 @@ class Addition extends React.Component {
             response: '',
             color:false
         }
-        this.updateResponse = this.updateResponse.bind(this);
-        this.inputKeyPress = this.inputKeyPress.bind(this);
-        this.renderProblem = this.renderProblem.bind(this);
-        this.renderWin = this.renderWin.bind(this);
-        this.renderLose = this.renderLose.bind(this);
-        this.resetScore = this.resetScore.bind(this);
     }
 
     updateResponse = (event) => {
-        this.setState({
-            response: event.target.value
-        });
+        this.setState({response: event.target.value});
     }
 
     inputKeyPress = (event) => {
@@ -46,7 +38,7 @@ class Addition extends React.Component {
             }
         }
     }
-    render = () => {
+    render(){
         if (this.state.correct === 3) {
             return this.renderWin();
         } else if(this.state.wrong===3){

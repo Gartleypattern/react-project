@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.csss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Question1 extends React.Component{
     constructor(props) {
@@ -10,12 +10,8 @@ class Question1 extends React.Component{
     }
     
     changeResult = () => {
-        if (this.state.status) {
-            return;
-        }
-        this.setState({
-            status:true
-        });
+        if (this.state.status) {return;}
+        this.setState({status:true});
         this.props.result();
     }
 
@@ -34,6 +30,7 @@ class Question1 extends React.Component{
         );
     }
 }
+
 class Question2 extends React.Component{
     constructor(props) {
         super(props);
@@ -43,12 +40,8 @@ class Question2 extends React.Component{
     }
     
     changeResult = () => {
-        if (this.state.status) {
-            return;
-        }
-        this.setState({
-            status:true
-        });
+        if (this.state.status) {return;}
+        this.setState({status:true});
         this.props.result();
     }
 
@@ -78,12 +71,8 @@ class Question3 extends React.Component{
     }
     
     changeResult = () => {
-        if (this.state.status) {
-            return;
-        }
-        this.setState({
-            status:true
-        });
+        if (this.state.status) {return;}
+        this.setState({status:true});
         this.props.result();
     }
 
@@ -116,34 +105,20 @@ class Quize extends React.Component{
     }
 
     Privious = () => {
-        if (this.state.questionNumber === 1) {
-            return;
-        }
-        this.setState(state=>({
-            questionNumber:state.questionNumber-1
-        }));
+        if (this.state.questionNumber === 1) {return;}
+        this.setState(state=>({questionNumber:state.questionNumber-1}));
     }
 
     Next = () => {
-        if (this.state.questionNumber === 3) {
-            return;
-        }
-        this.setState(state=>({
-            questionNumber:state.questionNumber+1
-        }));
+        if (this.state.questionNumber === 3) {return;}
+        this.setState(state=>({questionNumber:state.questionNumber+1}));
     }
     
     changeResult = () => {
-        if (this.state.score===this.state.allQuestion) {
-            return;
-        } 
+        if (this.state.score===this.state.allQuestion) {return;} 
             
-        this.setState(state=>({
-                score:state.score+1
-            }));
+        this.setState(state=>({score:state.score+1}));
     }
-    
-
 
     render = () => {
         
