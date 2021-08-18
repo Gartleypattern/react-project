@@ -1,5 +1,5 @@
 import React from 'react';
-import ToDoList from './components/ToDoList';
+import ValidEmail from './components/validator';
 import './App.css';
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ToDoList />
+        <ValidEmail />
       </div>
     );
   };
